@@ -1,11 +1,13 @@
-const http = require('http')
+const express = require('express')
+const app = express()
 
-const server = http.createServer((req, res) => {
-    if (req.url == "/about") {
-        res.end("The about page")
-    }
-    if (req.url == "/") {
-        res.end("The home page")
-    }
+app.set("view engine", 'ejs')
+
+app.get('/', (req, res) => {
+    res.render('index')
 })
-server.listen(3000)
+app.get('/about', (req, res) => {
+    res.send("The about page")
+})
+
+app.listen(3000)
