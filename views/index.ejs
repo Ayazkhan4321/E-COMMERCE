@@ -5,10 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body>
-    I have html file through backend
+    <div class="container">
+        <div class="form-container">
+            <h2 id="formTitle">Sign In</h2>
+            <form id="loginForm" action="/login-form" method="post">
+                <label for="email">Email or mobile phone number</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required name="password">
+
+                <button type="button" onclick="loginUser()">Sign-In</button>
+                <p class="switch-text">
+                    New to QuickMart? <a href="#" onclick="toggleForm()">Create your QuickMart account</a>
+                </p>
+            </form>
+
+            <form id="registerForm" style="display: none;" action="/register-Form" method="post">
+                <label for="name">Your name</label>
+                <input type="text" id="name" placeholder="Enter your name" required name="name">
+
+                <label for="emailRegister">Email or mobile phone number</label>
+                <input type="email" id="emailRegister" placeholder="Enter your email" required name="emailRegister">
+
+                <label for="passwordRegister">Password</label>
+                <input type="password" id="passwordRegister" placeholder="Enter your password" required
+                    name="passwordRegister">
+
+                <button type="button">Create your QuickMart account</button>
+                <p class=" switch-text">
+                    Already have an account? <a href="#" onclick="toggleForm()">Sign-In</a>
+                </p>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
