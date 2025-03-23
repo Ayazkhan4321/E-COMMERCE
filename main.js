@@ -14,11 +14,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
     res.render('index')
 })
-
+app.get('/home', (req, res) => {
+    res.render('home')
+})
 
 app.post('/login-form', (req, res) => {
-    console.log("Received Data:", req.body);
-    res.send("data recived")
+    console.log(req.body);
+    res.redirect('/home');
 })
 app.post('/register-Form', (req, res) => {
     console.log(req.body)
